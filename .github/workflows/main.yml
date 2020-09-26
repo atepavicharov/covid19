@@ -13,4 +13,6 @@ jobs:
           ENDPOINT: https://coronavirus.bg/stats.json
       - name: Check env vars
         run:  gci "env:"
+      - name: Check current dir content
+        run:  gci
 
