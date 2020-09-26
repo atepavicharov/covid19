@@ -14,7 +14,7 @@ jobs:
       - name: Fetch API Data 📦
         uses: JamesIves/fetch-api-data-action@releases/v1
         with:
-          ENDPOINT: $env:test_url_endpoint
+          ENDPOINT: http://dummy.restapiexample.com/api/v1/employees
       - name: Check env vars
         run:  gci "env:"
       - name: Check current dir content
