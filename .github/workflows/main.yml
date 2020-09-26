@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 env:
-  test_url_endpoint: http://dummy.restapiexample.com/api/v1/employees
+  test_url_endpoint: 'http://dummy.restapiexample.com/api/v1/employees'
   covid_url_endpoint: https://coronavirus.bg/stats.json 
   
 jobs:
