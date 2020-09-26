@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 env:
-  test_url_endpoint: 'http://dummy.restapiexample.com/api/v1/employees'
+  test_url_endpoint: http://dummy.restapiexample.com/api/v1/employees
   covid_url_endpoint: https://coronavirus.bg/stats.json 
   
 jobs:
@@ -14,11 +14,8 @@ jobs:
       - name: Fetch API Data 📦
         uses: JamesIves/fetch-api-data-action@releases/v1
         with:
-          ENDPOINT: http://dummy.restapiexample.com/api/v1/employees
-      - name: Check env vars
-        run:  gci "env:"
-      - name: Check current dir content
+          ENDPOINT: ${{ env:test_url_endpoint }}
+      - name: Get JSON content
         run:  |
-              gci fetch-api-data-action
               Get-Content -Raw -Path fetch-api-data-action/data.json | ConvertFrom-Json
 
