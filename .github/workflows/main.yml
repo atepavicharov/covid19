@@ -4,12 +4,13 @@ on:
   workflow_dispatch:
   
 jobs:
-  build:
+  fetch-api-data:
     runs-on: windows-latest
     steps:
       - name: Fetch API Data 📦
         uses: JamesIves/fetch-api-data-action@releases/v1
         with:
           ENDPOINT: https://coronavirus.bg/stats.json
-
+      - name: Check env vars
+        run:  gci "env:"
 
